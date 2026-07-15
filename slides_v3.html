@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>COURSEMOS IBT MOCK TEST - 대학·어학원 도입 제안 브로셔 v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ============================================================
+   DESIGN TOKENS — UBION STUDY ABROAD KOREA tone & manner
+   light sky-blue palette · geometric sans · airy white layout
+============================================================ */
+:root{
+  --blue:#0079FF;            /* UBION brand */
+  --sky:#3FA2FF;             /* statement / eyebrow blue */
+  --sky-strong:#2E90F0;
+  --sky-card-a:#69B7F7;      /* solid feature card gradient */
+  --sky-card-b:#4CA3EF;
+  --ink:#33383F;             /* titles */
+  --ink-soft:#5A6068;
+  --body:#6B7280;            /* body text */
+  --muted:#9AA3AD;
+  --line:#DDE4EB;
+  --panel:#F4F6F9;           /* gray section panel */
+  --tint:#EAF5FF;
+  --tint2:#CBE6FB;
+  --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+html,body{background:#E9EDF1;}
+body{
+  font-family:'Lexend','Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+.slide{
+  width:1920px;height:1080px;
+  position:relative;overflow:hidden;
+  background:var(--white);
+  margin:40px auto;
+  box-shadow:0 20px 60px rgba(20,50,90,0.12);
+  page-break-after:always;
+}
+
+/* ---------- shared components ---------- */
+.tophead{
+  position:absolute;top:56px;left:110px;right:110px;
+  padding-bottom:16px;border-bottom:1.5px solid #3B3F45;
+  text-align:right;font-size:17px;letter-spacing:1.2px;
+  color:#3B3F45;font-weight:500;
+}
+.tophead b{color:var(--blue);font-weight:700;letter-spacing:1.2px;}
+.footer-copy{position:absolute;bottom:42px;left:110px;font-size:13px;color:var(--muted);letter-spacing:.3px;}
+.page-num{position:absolute;bottom:42px;right:110px;font-size:13px;color:var(--muted);font-weight:600;letter-spacing:1px;}
+
+.eyebrow{
+  display:block;font-size:19px;font-weight:600;letter-spacing:2.5px;
+  color:var(--sky);text-transform:uppercase;margin-bottom:18px;
+}
+.title-xl{font-size:58px;font-weight:600;color:var(--ink);line-height:1.32;letter-spacing:-0.5px;}
+.title-xl .accent{color:var(--sky);}
+.statement{font-size:38px;font-weight:500;color:var(--sky);line-height:1.5;letter-spacing:-0.3px;}
+
+.pill{
+  display:inline-flex;align-items:center;
+  background:linear-gradient(90deg,#55ACF5,#A6D6FF);
+  color:#fff;font-size:19px;font-weight:700;letter-spacing:1px;
+  padding:12px 34px;border-radius:40px;
+  box-shadow:0 8px 20px rgba(63,162,255,0.25);
+}
+.pill .q{color:#124a7e;margin-left:8px;}
+
+.panel{
+  position:absolute;background:var(--panel);border-radius:24px;
+}
+
+/* white point card */
+.pt-card{
+  background:#fff;border-radius:18px;padding:34px 32px;
+  box-shadow:0 10px 28px rgba(30,80,140,0.08);
+  position:relative;
+}
+.pt-label{font-size:17px;font-weight:700;color:var(--sky-strong);letter-spacing:1px;margin-bottom:12px;}
+.pt-title{font-size:24px;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:16px;}
+.pt-card ul{list-style:none;}
+.pt-card li{
+  font-size:15px;color:var(--body);line-height:1.55;margin-bottom:9px;padding-left:14px;position:relative;
+}
+.pt-card li::before{content:"·";position:absolute;left:0;color:var(--muted);font-weight:700;}
+
+/* connector dot+line */
+.connector{position:relative;height:64px;}
+.connector::before{
+  content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);
+  width:10px;height:10px;border-radius:50%;
+  background:#BBDDFB;border:2px solid #8CC6F8;
+}
+.connector::after{
+  content:"";position:absolute;left:50%;top:12px;transform:translateX(-50%);
+  width:1.5px;height:50px;background:#A8D3F8;
+}
+
+/* solid blue illustration card */
+.blue-card{
+  background:linear-gradient(180deg,var(--sky-card-a),var(--sky-card-b));
+  border-radius:20px;padding:30px 30px;color:#fff;position:relative;
+  box-shadow:0 14px 34px rgba(63,150,235,0.30);
+}
+.blue-card .spark{font-size:22px;margin-bottom:12px;display:block;color:#EAF6FF;}
+.blue-card h4{font-size:25px;font-weight:600;line-height:1.35;letter-spacing:-0.2px;}
+.chip{
+  display:inline-block;background:#fff;color:var(--sky-strong);
+  font-size:14px;font-weight:600;padding:8px 16px;border-radius:20px;margin:6px 6px 0 0;
+  box-shadow:0 4px 10px rgba(20,80,140,0.15);
+}
+.chip.ghost{background:rgba(255,255,255,0.22);color:#fff;border:1px solid rgba(255,255,255,0.55);}
+.chip.deep{background:#1D6FC4;color:#fff;}
+
+/* ============ SLIDE 1 : COVER ============ */
+#slide-1{
+  background:linear-gradient(150deg,#BFDFF9 0%,#A8D2F5 34%,#8FC4F2 60%,#B7DCF9 100%);
+  color:#fff;
+}
+#slide-1 .ribbon{position:absolute;border-radius:50%;filter:blur(3px);}
+#slide-1 .r1{width:1500px;height:1500px;top:-820px;right:-420px;
+  background:radial-gradient(circle at 35% 65%,rgba(255,255,255,0.85) 0%,rgba(190,224,250,0.35) 42%,rgba(120,180,240,0.55) 66%,rgba(255,255,255,0) 72%);}
+#slide-1 .r2{width:1200px;height:1200px;bottom:-640px;left:-300px;
+  background:radial-gradient(circle at 62% 30%,rgba(255,255,255,0.75) 0%,rgba(170,214,248,0.30) 40%,rgba(105,170,235,0.55) 63%,rgba(255,255,255,0) 70%);}
+#slide-1 .r3{width:820px;height:820px;top:120px;left:640px;
+  background:radial-gradient(circle at 50% 50%,rgba(255,255,255,0.0) 46%,rgba(255,255,255,0.65) 58%,rgba(140,195,245,0.45) 66%,rgba(255,255,255,0) 74%);}
+#slide-1 .r4{width:560px;height:560px;bottom:-120px;right:280px;
+  background:radial-gradient(circle at 50% 50%,rgba(255,255,255,0) 40%,rgba(255,255,255,0.6) 55%,rgba(120,185,242,0.5) 65%,rgba(255,255,255,0) 75%);}
+#slide-1 .spine{
+  position:absolute;top:64px;left:42px;
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  font-size:15px;letter-spacing:5px;color:rgba(255,255,255,0.85);font-weight:500;
+}
+#slide-1 .cover-title{
+  position:absolute;top:120px;left:150px;
+  font-size:120px;font-weight:600;line-height:1.16;letter-spacing:1px;
+  color:#fff;text-shadow:0 4px 30px rgba(60,130,200,0.25);
+}
+#slide-1 .cover-tag{
+  position:absolute;top:452px;left:620px;display:flex;align-items:center;gap:22px;
+  font-size:25px;font-weight:500;color:#fff;line-height:1.5;
+}
+#slide-1 .cover-tag .rule{width:120px;height:1.5px;background:rgba(255,255,255,0.9);}
+#slide-1 .cover-foot{
+  position:absolute;bottom:110px;left:150px;
+  font-size:27px;font-weight:600;letter-spacing:1.5px;color:#0F72D0;line-height:1.7;
+}
+#slide-1 .cover-logo{position:absolute;bottom:112px;right:150px;height:52px;}
+#slide-1 .legal{
+  position:absolute;bottom:34px;left:150px;right:150px;text-align:left;
+  font-size:12px;color:rgba(255,255,255,0.75);line-height:1.6;
+}
+
+/* ============ SLIDE 2 : CHALLENGE & INSIGHT ============ */
+#slide-2 .head-wrap{position:absolute;top:150px;left:110px;}
+#slide-2 .panel{top:378px;left:110px;right:110px;bottom:104px;}
+#slide-2 .pill{position:absolute;top:-24px;left:44px;}
+#slide-2 .panel-intro{position:absolute;top:52px;left:52px;font-size:21px;color:var(--ink-soft);line-height:1.6;}
+#slide-2 .pain-row{position:absolute;top:140px;left:52px;right:52px;display:flex;gap:36px;}
+#slide-2 .pt-card{flex:1;}
+#slide-2 .pain-desc{font-size:15.5px;color:var(--body);line-height:1.65;}
+#slide-2 .conn-row{position:absolute;top:412px;left:52px;right:52px;display:flex;gap:36px;}
+#slide-2 .conn-row .connector{flex:1;}
+#slide-2 .insight-bar{
+  position:absolute;left:52px;right:52px;bottom:44px;
+  background:linear-gradient(90deg,var(--sky-card-a),var(--sky-card-b));
+  border-radius:20px;padding:30px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 14px 34px rgba(63,150,235,0.28);
+}
+#slide-2 .insight-bar p{font-size:30px;font-weight:600;color:#fff;letter-spacing:-0.3px;}
+#slide-2 .insight-bar p .em{color:#EAF6FF;font-weight:700;}
+#slide-2 .insight-bar .spark{font-size:30px;color:#EAF6FF;}
+
+/* ============ SLIDE 3 : INTRODUCTION ============ */
+#slide-3 .left{position:absolute;top:150px;left:110px;width:720px;}
+#slide-3 .prod-title{font-size:66px;font-weight:600;color:#3B3F45;letter-spacing:0;}
+#slide-3 .prod-sub{display:flex;align-items:center;gap:24px;margin-top:6px;}
+#slide-3 .prod-sub .rule{width:190px;height:1.5px;background:#3B3F45;}
+#slide-3 .prod-sub span{font-size:46px;font-weight:400;color:#8B939C;letter-spacing:6px;}
+#slide-3 .statement{margin-top:88px;}
+#slide-3 .body-copy{margin-top:44px;font-size:18px;color:var(--body);line-height:1.85;text-align:justify;}
+#slide-3 .body-copy p+p{margin-top:20px;}
+#slide-3 .partner-box{
+  margin-top:52px;border:1.5px solid #9CCBF3;background:#F3FAFF;border-radius:10px;
+  padding:24px 30px;display:flex;align-items:center;gap:26px;
+}
+#slide-3 .partner-box .pb-label{font-size:19px;font-weight:600;color:var(--sky);line-height:1.45;}
+#slide-3 .partner-box .pb-desc{font-size:15px;color:var(--body);line-height:1.55;border-left:1px solid #BFD9EE;padding-left:26px;}
+#slide-3 .deco-circle{
+  position:absolute;border-radius:50%;
+  background:linear-gradient(150deg,#7FBEF5,#D6ECFD);
+}
+#slide-3 .dc1{width:340px;height:340px;top:170px;right:600px;}
+#slide-3 .dc2{width:420px;height:420px;bottom:-160px;right:60px;background:linear-gradient(330deg,#7FBEF5,#E8F5FE);}
+#slide-3 .browser{
+  position:absolute;top:170px;right:130px;width:560px;height:770px;
+  background:#fff;border-radius:16px;
+  box-shadow:0 30px 70px rgba(40,100,170,0.22);
+  overflow:hidden;border:1px solid #E3EBF2;
+}
+#slide-3 .browser .bar{height:44px;background:#F2F5F8;display:flex;align-items:center;padding:0 18px;gap:7px;border-bottom:1px solid #E7ECF1;}
+#slide-3 .browser .bar i{width:10px;height:10px;border-radius:50%;background:#D7DEE6;display:block;}
+#slide-3 .browser .hero{
+  margin:22px;background:#0E1526;border-radius:12px;padding:34px 32px;color:#fff;position:relative;height:190px;
+}
+#slide-3 .browser .hero .h-eyebrow{font-size:11px;letter-spacing:2px;color:#8FB8E8;margin-bottom:12px;}
+#slide-3 .browser .hero .h-title{font-size:24px;font-weight:600;line-height:1.45;}
+#slide-3 .browser .hero .arch{
+  position:absolute;right:30px;top:36px;width:86px;height:118px;
+  border:2.5px solid #4DA3FF;border-radius:60px 60px 8px 8px;opacity:0.9;
+}
+#slide-3 .browser .hero .arch::before{
+  content:"";position:absolute;left:18px;top:16px;width:86px;height:118px;
+  border:2.5px solid #35D0A5;border-radius:60px 60px 8px 8px;
+}
+#slide-3 .browser .rowline{margin:0 22px 14px;height:13px;border-radius:7px;background:#EEF2F7;}
+#slide-3 .browser .rowline.w70{width:70%;}
+#slide-3 .browser .rowline.w45{width:45%;}
+#slide-3 .browser .mini-cards{display:flex;gap:12px;margin:22px;}
+#slide-3 .browser .mini{
+  flex:1;border:1px solid #E3EBF2;border-radius:10px;padding:16px 14px;background:#FAFCFE;
+}
+#slide-3 .browser .mini .mv{font-size:20px;font-weight:700;color:var(--ink);}
+#slide-3 .browser .mini .mk{font-size:12px;color:var(--muted);margin-top:5px;}
+#slide-3 .browser .cta{
+  margin:6px 22px;display:block;background:var(--blue);color:#fff;text-align:center;
+  font-size:16px;font-weight:600;padding:15px;border-radius:10px;
+}
+#slide-3 .float-pill{
+  position:absolute;font-size:20px;font-weight:600;padding:14px 34px;border-radius:40px;
+}
+#slide-3 .fp1{top:400px;right:640px;background:var(--blue);color:#fff;box-shadow:0 12px 28px rgba(0,90,200,0.35);}
+#slide-3 .fp2{top:820px;right:96px;background:#fff;color:var(--sky-strong);border:1.5px solid #8CC6F8;box-shadow:0 12px 28px rgba(60,130,200,0.18);}
+#slide-3 .spark-deco{position:absolute;top:730px;right:660px;font-size:44px;color:var(--sky);}
+
+/* ============ SLIDE 4 : VALUE POSITIONING ============ */
+#slide-4 .left{position:absolute;top:170px;left:110px;width:600px;}
+#slide-4 .left .title-xl{font-size:50px;}
+#slide-4 .keylist{list-style:none;margin-top:56px;}
+#slide-4 .keylist li{
+  font-size:18.5px;color:var(--ink-soft);margin-bottom:22px;padding-left:36px;position:relative;line-height:1.5;
+}
+#slide-4 .keylist li::before{
+  content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;
+  background:var(--tint);border:2.5px solid var(--sky);
+}
+#slide-4 .value-panel{
+  position:absolute;top:140px;right:110px;width:1010px;height:800px;
+  background:linear-gradient(160deg,#DFF1FE 0%,#BFE0FA 55%,#A9D5F8 100%);
+  border-radius:30px;padding:56px;
+}
+#slide-4 .dualcards{display:flex;gap:30px;height:100%;}
+#slide-4 .dcard{
+  flex:1;background:#fff;border-radius:20px;padding:40px 36px;display:flex;flex-direction:column;
+  box-shadow:0 16px 40px rgba(50,110,180,0.14);
+}
+#slide-4 .dcard .tag{
+  display:inline-block;font-size:14px;font-weight:700;letter-spacing:1.5px;color:#fff;
+  background:linear-gradient(90deg,var(--sky-card-a),var(--sky-card-b));
+  padding:9px 20px;border-radius:24px;margin-bottom:26px;width:fit-content;
+}
+#slide-4 .dcard.inst .tag{background:#1D6FC4;}
+#slide-4 .dcard h3{font-size:25px;font-weight:600;line-height:1.45;margin-bottom:30px;color:var(--ink);}
+#slide-4 .dcard ul{list-style:none;flex:1;}
+#slide-4 .dcard li{font-size:15.5px;margin-bottom:22px;line-height:1.55;padding-left:14px;position:relative;}
+#slide-4 .dcard li::before{content:"·";position:absolute;left:0;color:var(--sky);font-weight:700;}
+#slide-4 .dcard li b{display:block;color:var(--ink);font-weight:600;margin-bottom:4px;}
+#slide-4 .dcard li span{color:var(--body);}
+#slide-4 .dcard li span .arr{color:var(--sky-strong);font-weight:600;}
+
+/* ============ SLIDE 5 : BEFORE / AFTER ============ */
+#slide-5 .head-wrap{position:absolute;top:150px;left:110px;}
+#slide-5 .row-label{
+  position:absolute;left:110px;display:inline-flex;
+  font-size:16px;font-weight:700;letter-spacing:1.5px;
+  padding:10px 26px;border-radius:30px;
+}
+#slide-5 .row-label.before-l{top:322px;background:#EDF1F5;color:var(--muted);}
+#slide-5 .row-label.after-l{top:648px;background:linear-gradient(90deg,var(--sky-card-a),var(--sky-card-b));color:#fff;box-shadow:0 8px 20px rgba(63,150,235,0.3);}
+#slide-5 .row{position:absolute;left:110px;width:1700px;display:flex;justify-content:space-between;}
+#slide-5 .row.before{top:388px;}
+#slide-5 .row.after{top:714px;}
+#slide-5 .step{width:300px;text-align:center;}
+#slide-5 .circle{
+  width:172px;height:172px;border-radius:50%;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+}
+#slide-5 .before .circle{border:2px dashed #C3CEDA;background:#FAFBFC;}
+#slide-5 .after .circle{
+  background:linear-gradient(160deg,var(--sky-card-a),var(--sky-card-b));
+  box-shadow:0 16px 32px rgba(63,150,235,0.30);
+}
+#slide-5 .before .circle span{font-size:16px;color:var(--muted);font-weight:500;line-height:1.5;}
+#slide-5 .after .circle span{font-size:16px;color:#fff;font-weight:600;line-height:1.5;}
+#slide-5 .mid-conn{position:absolute;left:0;right:0;top:600px;text-align:center;font-size:34px;color:var(--sky);font-weight:300;}
+
+/* ============ SLIDE 6 & 7 : FEATURES (POINT layout) ============ */
+.feat-slide .head-wrap{position:absolute;top:140px;left:110px;}
+.feat-slide .panel{top:330px;left:110px;right:110px;bottom:96px;}
+.feat-slide .pill{position:absolute;top:-24px;left:44px;}
+.feat-slide .panel-intro{position:absolute;top:50px;left:52px;font-size:20px;color:var(--ink-soft);line-height:1.6;}
+.feat-slide .grid{position:absolute;top:128px;left:52px;right:52px;display:flex;gap:34px;}
+.feat-slide .col{flex:1;display:flex;flex-direction:column;}
+.feat-slide .pt-card{min-height:238px;}
+.feat-slide .blue-card{min-height:206px;}
+.feat-slide .bc-illust{position:absolute;right:26px;bottom:56px;}
+.feat-slide .bc-chips{position:absolute;left:26px;bottom:22px;right:20px;}
+/* mini CSS illustrations inside blue cards */
+.ill-doc{width:64px;height:76px;background:#fff;border-radius:8px;position:relative;box-shadow:0 8px 18px rgba(20,80,140,0.25);}
+.ill-doc::before{content:"";position:absolute;left:12px;top:14px;width:40px;height:7px;background:#BEE0FA;border-radius:4px;box-shadow:0 14px 0 #D9ECFC,0 28px 0 #D9ECFC;}
+.ill-doc::after{content:"";position:absolute;left:-16px;top:12px;width:64px;height:76px;background:rgba(255,255,255,0.35);border-radius:8px;z-index:-1;}
+.ill-lock{width:58px;height:46px;background:#fff;border-radius:10px;position:relative;box-shadow:0 8px 18px rgba(20,80,140,0.25);}
+.ill-lock::before{content:"";position:absolute;left:11px;top:-24px;width:36px;height:36px;border:6px solid #fff;border-bottom:none;border-radius:22px 22px 0 0;}
+.ill-lock::after{content:"";position:absolute;left:24px;top:14px;width:10px;height:18px;background:#4CA3EF;border-radius:5px;}
+.ill-monitor{width:84px;height:56px;background:#fff;border-radius:8px;position:relative;box-shadow:0 8px 18px rgba(20,80,140,0.25);}
+.ill-monitor::before{content:"";position:absolute;left:34px;bottom:-14px;width:16px;height:14px;background:#fff;}
+.ill-monitor::after{content:"";position:absolute;left:20px;bottom:-20px;width:44px;height:6px;background:#fff;border-radius:3px;}
+.ill-wave{display:flex;align-items:flex-end;gap:5px;height:52px;}
+.ill-wave i{display:block;width:8px;background:#fff;border-radius:4px;}
+.ill-wave i:nth-child(1){height:22px;}
+.ill-wave i:nth-child(2){height:44px;}
+.ill-wave i:nth-child(3){height:30px;}
+.ill-wave i:nth-child(4){height:52px;}
+.ill-wave i:nth-child(5){height:26px;}
+.ill-lang{
+  width:62px;height:62px;background:#fff;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;font-weight:700;color:#3E97E8;
+  box-shadow:0 8px 18px rgba(20,80,140,0.25);position:relative;
+}
+.ill-lang::after{
+  content:"文";position:absolute;right:-22px;bottom:-16px;width:44px;height:44px;
+  background:#1D6FC4;color:#fff;border-radius:10px;font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ============ SLIDE 8 : PRICE ============ */
+#slide-8{background:linear-gradient(120deg,#FFFFFF 46%,#EAF5FF 74%,#CBE6FB 100%);}
+#slide-8 .head-wrap{position:absolute;top:150px;left:110px;}
+#slide-8 .price-left{position:absolute;top:360px;left:110px;width:800px;}
+#slide-8 .price-label{font-size:23px;font-weight:600;color:var(--ink-soft);letter-spacing:2px;margin-bottom:16px;}
+#slide-8 .bignum{font-family:'Lexend',sans-serif;font-size:210px;font-weight:300;line-height:1;color:var(--sky);letter-spacing:-4px;}
+#slide-8 .bignum span{font-size:64px;font-weight:400;margin-left:10px;letter-spacing:0;}
+#slide-8 .price-state{margin-top:44px;font-size:30px;font-weight:500;color:var(--sky-strong);line-height:1.55;}
+#slide-8 .compare{position:absolute;top:360px;right:130px;width:600px;}
+#slide-8 .cbox{
+  background:#fff;border-radius:18px;padding:36px 42px;
+  box-shadow:0 14px 36px rgba(50,110,180,0.12);
+}
+#slide-8 .cbox+.cbox{margin-top:28px;}
+#slide-8 .cbox .lv{font-size:16px;font-weight:600;color:var(--sky-strong);letter-spacing:1px;margin-bottom:16px;}
+#slide-8 .cbox .price-line{display:flex;align-items:baseline;gap:16px;}
+#slide-8 .cbox .old{font-size:26px;text-decoration:line-through;color:var(--muted);font-weight:300;}
+#slide-8 .cbox .arrow{font-size:20px;color:var(--sky);}
+#slide-8 .cbox .new{font-size:40px;color:var(--ink);font-weight:600;}
+#slide-8 .cbox .pct{
+  margin-left:auto;background:linear-gradient(90deg,var(--sky-card-a),var(--sky-card-b));
+  color:#fff;font-size:17px;font-weight:700;padding:8px 18px;border-radius:24px;
+}
+#slide-8 .dots{border:none;border-top:1.5px dashed #BFD4E6;margin:0;position:absolute;top:322px;left:110px;right:110px;}
+#slide-8 .source{position:absolute;bottom:88px;left:110px;font-size:14px;color:var(--muted);}
+#slide-8 .spark-deco{position:absolute;top:270px;right:150px;font-size:40px;color:var(--sky);}
+
+/* ============ SLIDE 9 : 3-WIN ============ */
+#slide-9 .head-wrap{position:absolute;top:150px;left:110px;}
+#slide-9 .win-zone{position:absolute;top:360px;left:110px;right:110px;bottom:96px;}
+#slide-9 .hub{
+  position:absolute;top:66px;left:50%;transform:translateX(-50%);
+  width:300px;height:300px;border-radius:36px;
+  background:linear-gradient(160deg,var(--sky-card-a),var(--sky-card-b));color:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 26px 56px rgba(63,150,235,0.32);
+}
+#slide-9 .hub .spark{font-size:26px;color:#EAF6FF;margin-bottom:6px;}
+#slide-9 .hub .n{font-size:86px;font-weight:600;line-height:1;}
+#slide-9 .hub .t{font-size:24px;font-weight:500;margin-top:8px;letter-spacing:1px;}
+#slide-9 .wincard{
+  position:absolute;width:470px;background:#fff;border-radius:20px;padding:36px 36px;
+  box-shadow:0 14px 34px rgba(30,80,140,0.09);
+}
+#slide-9 .wincard.w1{top:60px;left:0;}
+#slide-9 .wincard.w2{top:60px;right:0;}
+#slide-9 .wincard.w3{bottom:10px;left:50%;transform:translateX(-50%);}
+#slide-9 .wincard h4{font-size:16px;font-weight:700;color:var(--sky-strong);letter-spacing:1.5px;margin-bottom:10px;}
+#slide-9 .wincard .who{font-size:26px;font-weight:600;margin-bottom:14px;color:var(--ink);}
+#slide-9 .wincard p{font-size:15.5px;color:var(--body);line-height:1.65;}
+#slide-9 .wincard p .arr{color:var(--sky-strong);font-weight:600;}
+#slide-9 .link{position:absolute;background:#A8D3F8;}
+#slide-9 .lk1{top:200px;left:480px;width:130px;height:1.5px;}
+#slide-9 .lk2{top:200px;right:480px;width:130px;height:1.5px;}
+#slide-9 .lk3{top:376px;left:50%;width:1.5px;height:64px;transform:translateX(-50%);}
+
+#slide-9 .stat{position:absolute;bottom:30px;width:400px;border-top:1.5px dashed #BFD4E6;padding-top:24px;}
+#slide-9 .stat .sn{font-family:'Lexend',sans-serif;font-size:74px;font-weight:300;color:var(--sky);line-height:1;letter-spacing:-1px;}
+#slide-9 .stat .sk{font-size:16px;color:var(--sky-strong);margin-top:10px;font-weight:500;line-height:1.5;}
+#slide-9 .stat .src{font-size:12px;color:var(--muted);margin-top:8px;}
+#slide-9 .stat.s-left{left:0;}
+#slide-9 .stat.s-right{right:0;text-align:right;}
+
+/* ============ SLIDE 10 : PROCESS ============ */
+#slide-10 .head-wrap{position:absolute;top:150px;left:110px;}
+#slide-10 .track{position:absolute;top:560px;left:150px;right:150px;border-top:2px dashed #A8D3F8;}
+#slide-10 .steps{position:absolute;top:400px;left:110px;width:1700px;display:flex;justify-content:space-between;}
+#slide-10 .step{width:300px;text-align:center;}
+#slide-10 .step .stepno{font-size:15px;font-weight:700;letter-spacing:2px;color:var(--sky-strong);margin-bottom:22px;}
+#slide-10 .step .dot{
+  width:164px;height:164px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 30px;
+  font-size:20px;font-weight:600;padding:16px;line-height:1.4;position:relative;z-index:2;
+}
+#slide-10 .step:nth-child(odd) .dot{
+  background:linear-gradient(160deg,var(--sky-card-a),var(--sky-card-b));color:#fff;
+  box-shadow:0 16px 30px rgba(63,150,235,0.28);
+}
+#slide-10 .step:nth-child(even) .dot{
+  background:#fff;color:var(--sky-strong);border:2px solid #8CC6F8;
+  box-shadow:0 12px 24px rgba(63,150,235,0.14);
+}
+#slide-10 .step p{font-size:15px;color:var(--body);line-height:1.65;}
+
+/* ============ SLIDE 11 : CLOSING ============ */
+#slide-11{background:linear-gradient(160deg,#EAF5FF 0%,#CBE6FB 60%,#B4DBF9 100%);}
+#slide-11 .ribbon{position:absolute;border-radius:50%;filter:blur(3px);opacity:0.55;}
+#slide-11 .r1{width:1100px;height:1100px;top:-560px;right:-320px;
+  background:radial-gradient(circle at 40% 60%,rgba(255,255,255,0.9) 0%,rgba(180,219,249,0.3) 45%,rgba(255,255,255,0) 70%);}
+#slide-11 .r2{width:900px;height:900px;bottom:-460px;left:-260px;
+  background:radial-gradient(circle at 60% 35%,rgba(255,255,255,0.85) 0%,rgba(170,214,248,0.3) 45%,rgba(255,255,255,0) 70%);}
+#slide-11 .spine{
+  position:absolute;top:64px;left:42px;
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  font-size:15px;letter-spacing:5px;color:rgba(20,100,190,0.45);font-weight:500;
+}
+#slide-11 .center{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+#slide-11 .center img{height:88px;}
+#slide-11 .wordmark{margin-top:44px;font-size:19px;color:var(--sky-strong);letter-spacing:5px;font-weight:500;}
+#slide-11 .closing-info{
+  position:absolute;bottom:70px;left:150px;
+  font-size:15px;color:#4A80B0;line-height:1.9;
+}
+#slide-11 .closing-info b{color:#1467B8;font-weight:600;letter-spacing:.5px;}
+
+@media print{
+  body{background:#fff;}
+  .slide{margin:0;box-shadow:none;page-break-after:always;}
+  @page{size:1920px 1080px;margin:0;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ SLIDE 1 : COVER ============ -->
+<div class="slide" id="slide-1">
+  <div class="ribbon r1"></div>
+  <div class="ribbon r2"></div>
+  <div class="ribbon r3"></div>
+  <div class="ribbon r4"></div>
+  <div class="spine">GROWING UP, EVERYDAY</div>
+  <div class="cover-title">COURSEMOS IBT<br>MOCK TEST</div>
+  <div class="cover-tag">
+    <div class="rule"></div>
+    <div>진짜 TOPIK IBT, 미리 경험하게 하세요<br>외국인 유학생을 위한 실전 모의고사</div>
+  </div>
+  <div class="cover-foot">
+    COURSEMOS IBT — TOPIK<br>
+    FOR UNIVERSITY &amp; LANGUAGE INSTITUTE · 2026
+  </div>
+  <img src="data:image/png;base64,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" class="cover-logo" alt="UBION 로고">
+  <div class="legal">*본 자료는 발신자와 지정된 수신자에게만 제공되는 내용으로, 영업비밀 및 저작권 관련 정보가 포함될 수 있습니다.</div>
+</div>
+
+<!-- ============ SLIDE 2 : CHALLENGE & INSIGHT ============ -->
+<div class="slide" id="slide-2">
+  <div class="tophead"><b>UBION</b> | COURSEMOS IBT MOCK TEST</div>
+  <div class="head-wrap">
+    <span class="eyebrow">Challenge &amp; Insight</span>
+    <div class="title-xl">유학생에게 TOPIK IBT는,<br><span class="accent">처음부터 낯섭니다</span></div>
+  </div>
+  <div class="panel">
+    <div class="pill">WHY IS IT DIFFICULT<span class="q">?</span></div>
+    <div class="panel-intro">첫 IBT 응시를 앞둔 유학생과, 이들을 지원해야 하는 기관 모두에게 준비의 공백이 존재합니다.</div>
+    <div class="pain-row">
+      <div class="pt-card">
+        <div class="pt-label">01.</div>
+        <div class="pt-title">생소한 컴퓨터 시험 환경</div>
+        <p class="pain-desc">종이 시험과 다른 IBT 진행 방식,<br>미리 접해볼 기회가 없음</p>
+      </div>
+      <div class="pt-card">
+        <div class="pt-label">02.</div>
+        <div class="pt-title">개별 연습 기회 부재</div>
+        <p class="pain-desc">혼자서는 실전과 같은 환경으로<br>연습하기 어려움</p>
+      </div>
+      <div class="pt-card">
+        <div class="pt-label">03.</div>
+        <div class="pt-title">기관의 인프라 부담</div>
+        <p class="pain-desc">자체적으로 실전 환경을<br>구축하기엔 비용·기술 부담</p>
+      </div>
+    </div>
+    <div class="conn-row">
+      <div class="connector"></div>
+      <div class="connector"></div>
+      <div class="connector"></div>
+    </div>
+    <div class="insight-bar">
+      <p>결국 학생들은 <span class="em">준비 없이 첫 IBT를 맞이합니다</span></p>
+      <span class="spark">✦</span>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 UBION Co., Ltd. All Rights Reserved.</div>
+  <div class="page-num">02</div>
+</div>
+
+<!-- ============ SLIDE 3 : INTRODUCTION ============ -->
+<div class="slide" id="slide-3">
+  <div class="tophead"><b>UBION</b> | COURSEMOS IBT MOCK TEST</div>
+  <div class="left">
+    <span class="eyebrow">TOPIK IBT Mock Exam Platform</span>
+    <div class="prod-title">COURSEMOS iBT</div>
+    <div class="prod-sub"><div class="rule"></div><span>MOCK TEST</span></div>
+    <div class="statement">Practice Smarter.<br>Prepare with Confidence.</div>
+    <div class="body-copy">
+      <p>COURSEMOS IBT MOCK TEST는 유비온이 운영하는 TOPIK IBT 대비 전용 플랫폼입니다. 실제 시험장과 동일한 환경에서 미리 연습할 수 있습니다.</p>
+      <p>"연습은 실전과 같아야 의미가 있다" — 실제 IBT 화면 구성과 진행 방식을 그대로 재현하고, 화면이탈 방지 프로그램으로 안정적인 응시 환경을 제공하며, 한국어·영어·태국어 3개 언어를 지원합니다.</p>
+    </div>
+    <div class="partner-box">
+      <div class="pb-label">COURSEMOS iBT ×<br>UBION</div>
+      <div class="pb-desc">실전 동일 구현 · 안정적 운영 · 언어 장벽 해소 · 합리적 가격<br>유학생의 TOPIK IBT 준비를 위한 가장 확실한 방법</div>
+    </div>
+  </div>
+  <div class="deco-circle dc1"></div>
+  <div class="deco-circle dc2"></div>
+  <div class="browser">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <div class="hero">
+      <div class="h-eyebrow">COURSEMOS IBT TOPIK</div>
+      <div class="h-title">실전과 똑같은 화면에서,<br>자신 있게 연습하세요</div>
+      <div class="arch"></div>
+    </div>
+    <div class="rowline"></div>
+    <div class="rowline w70"></div>
+    <div class="rowline w45"></div>
+    <div class="mini-cards">
+      <div class="mini"><div class="mv">실전 동일</div><div class="mk">IBT 화면 재현</div></div>
+      <div class="mini"><div class="mv">즉시 채점</div><div class="mk">종료 후 바로 확인</div></div>
+      <div class="mini"><div class="mv">3개 언어</div><div class="mk">한 · 영 · 태</div></div>
+    </div>
+    <div class="cta">모의고사 응시하기 →</div>
+  </div>
+  <div class="float-pill fp1">TOPIK Ⅰ</div>
+  <div class="float-pill fp2">TOPIK Ⅱ</div>
+  <div class="spark-deco">✦</div>
+  <div class="footer-copy">© 2026 UBION Co., Ltd. All Rights Reserved.</div>
+  <div class="page-num">03</div>
+</div>
+
+<!-- ============ SLIDE 4 : VALUE POSITIONING ============ -->
+<div class="slide" id="slide-4">
+  <div class="tophead"><b>UBION</b> | COURSEMOS IBT MOCK TEST</div>
+  <div class="left">
+    <span class="eyebrow">Value Positioning</span>
+    <div class="title-xl">학생에게는 실전 감각을,<br><span class="accent">기관에는 부담 없는 운영을</span></div>
+    <ul class="keylist">
+      <li>온라인으로 개별·단체 신청 가능</li>
+      <li>별도 프로그램으로 실전과 동일한 응시 환경</li>
+      <li>한국어·영어·태국어 다국어 지원</li>
+      <li>1회 5,000원, 부담 없는 반복 응시</li>
+      <li>응시 종료 즉시 결과 확인</li>
+    </ul>
+  </div>
+  <div class="value-panel">
+    <div class="dualcards">
+      <div class="dcard">
+        <div class="tag">FOR STUDENT</div>
+        <h3>실전 감각으로,<br>불안 없는 응시</h3>
+        <ul>
+          <li><b>실제 환경에서 미리 연습</b><span><span class="arr">→</span> 실전 불안 감소</span></li>
+          <li><b>응시 직후 즉시 결과 확인</b><span><span class="arr">→</span> 취약점 바로 파악</span></li>
+          <li><b>한/영/태 언어 지원</b><span><span class="arr">→</span> 언어 장벽 없이 이해</span></li>
+          <li><b>1회 5,000원</b><span><span class="arr">→</span> 부담 없이 반복 응시</span></li>
+        </ul>
+      </div>
+      <div class="dcard inst">
+        <div class="tag">FOR INSTITUTION</div>
+        <h3>업무 부담 없이,<br>만족도 높이는 프로그램</h3>
+        <ul>
+          <li><b>온라인 신청, 인프라 구축 불필요</b><span><span class="arr">→</span> 도입 즉시 운영</span></li>
+          <li><b>다국어 지원</b><span><span class="arr">→</span> 상담 부담 감소</span></li>
+          <li><b>정기 모의고사 프로그램 운영 가능</b><span><span class="arr">→</span> 학생 만족도 상승</span></li>
+          <li><b>실제 시험 대비 압도적으로 저렴</b><span><span class="arr">→</span> 예산 부담 최소화</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 UBION Co., Ltd. All Rights Reserved.</div>
+  <div class="page-num">04</div>
+</div>
+
+<!-- ============ SLIDE 5 : BEFORE / AFTER ============ -->
+<div class="slide" id="slide-5">
+  <div class="tophead"><b>UBION</b> | COURSEMOS IBT MOCK TEST</div>
+  <div class="head-wrap">
+    <span class="eyebrow">Service Process</span>
+    <div class="title-xl">기존 TOPIK 대비 방식과의 <span class="accent">차이</span></div>
+  </div>
+  <div class="row-label before-l">BEFORE</div>
+  <div class="row before">
+    <div class="step"><div class="circle"><span>실전 환경<br>경험 불가</span></div></div>
+    <div class="step"><div class="circle"><span>종이 문제집<br>위주 연습</span></div></div>
+    <div class="step"><div class="circle"><span>컴퓨터 시험<br>방식 생소</span></div></div>
+    <div class="step"><div class="circle"><span>결과 확인까지<br>오래 소요</span></div></div>
+    <div class="step"><div class="circle"><span>언어 지원 없는<br>학습 자료</span></div></div>
+  </div>
+  <div class="mid-conn">↓</div>
+  <div class="row-label after-l">AFTER — COURSEMOS IBT MOCK TEST</div>
+  <div class="row after">
+    <div class="step"><div class="circle"><span>실제 IBT 화면<br>그대로 재현</span></div></div>
+    <div class="step"><div class="circle"><span>화면이탈 방지로<br>실전 긴장감</span></div></div>
+    <div class="step"><div class="circle"><span>모니터 1대로<br>응시</span></div></div>
+    <div class="step"><div class="circle"><span>응시 종료 즉시<br>결과 확인</span></div></div>
+    <div class="step"><div class="circle"><span>한 · 영 · 태<br>다국어 지원</span></div></div>
+  </div>
+  <div class="footer-copy">© 2026 UBION Co., Ltd. All Rights Reserved.</div>
+  <div class="page-num">05</div>
+</div>
+
+<!-- ============ SLIDE 6 : FEATURE 1 ============ -->
+<div class="slide feat-slide" id="slide-6">
+  <div class="tophead"><b>UBION</b> | COURSEMOS IBT MOCK TEST</div>
+  <div class="head-wrap">
+    <span class="eyebrow">Key Features</span>
+    <div class="title-xl">실제 시험장, <span class="accent">그대로 옮겨왔습니다</span></div>
+  </div>
+  <div class="panel">
+    <div class="pill">WHY COURSEMOS IBT MOCK TEST<span class="q">?</span></div>
+    <div class="panel-intro">실제 시험과 동일한 환경 구현으로, 학생들이 실전에서 흔들리지 않도록 준비시킵니다.</div>
+    <div class="grid">
+      <div class="col">
+        <div class="pt-card">
+          <div class="pt-label">POINT 1.</div>
+          <div class="pt-title">실제 IBT 환경 재현</div>
+          <ul>
+            <li>실제 TOPIK IBT의 화면 구성과 진행 방식을 동일하게 재현</li>
+            <li>실전과 다름없는 감각으로 연습 가능</li>
+          </ul>
+        </div>
+        <div class="connector"></div>
+        <div class="blue-card">
+          <span class="spark">✦</span>
+          <h4>Real Test<br>Experience</h4>
+          <div class="bc-illust"><div class="ill-doc"></div></div>
+          <div class="bc-chips"><span class="chip deep">TOPIK Ⅰ·Ⅱ</span><span class="chip">듣기</span><span class="chip ghost">읽기</span></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="pt-card">
+          <div class="pt-label">POINT 2.</div>
+          <div class="pt-title">화면이탈 방지 프로그램</div>
+          <ul>
+            <li>전용 프로그램 설치로 다른 창으로의 이탈을 차단</li>
+            <li>실제 시험과 동일한 긴장감 속에서 응시</li>
+          </ul>
+        </div>
+        <div class="connector"></div>
+        <div class="blue-card">
+          <span class="spark">✦</span>
+          <h4>Secure<br>Test Mode</h4>
+          <div class="bc-illust" style="bottom:66px;"><div class="ill-lock"></div></div>
+          <div class="bc-chips"><span class="chip">화면이탈 차단</span><span class="chip ghost">응시 집중 모드</span></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="pt-card">
+          <div class="pt-label">POINT 3.</div>
+          <div class="pt-title">모니터 1대로 응시</div>
+          <ul>
+            <li>별도 장비 없이 모니터 1대로 응시 가능</li>
+            <li>실제 시험장과 동일한 조건을 그대로 구현</li>
+          </ul>
+        </div>
+        <div class="connector"></div>
+        <div class="blue-card">
+          <span class="spark">✦</span>
+          <h4>One Monitor<br>Setup</h4>
+          <div class="bc-illust" style="bottom:64px;"><div class="ill-monitor"></div></div>
+          <div class="bc-chips"><span class="chip">별도 장비 불필요</span><span class="chip ghost">시험장 동일 조건</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 UBION Co., Ltd. All Rights Reserved.</div>
+  <div class="page-num">06</div>
+</div>
+
+<!-- ============ SLIDE 7 : FEATURE 2 ============ -->
+<div class="slide feat-slide" id="slide-7">
+  <div class="tophead"><b>UBION</b> | COURSEMOS IBT MOCK TEST</div>
+  <div class="head-wrap">
+    <span class="eyebrow">Key Features</span>
+    <div class="title-xl">결과는 즉시, <span class="accent">언어는 자유롭게</span></div>
+  </div>
+  <div class="panel">
+    <div class="pill">WHY COURSEMOS IBT MOCK TEST<span class="q">?</span></div>
+    <div class="panel-intro">응시 이후의 경험까지 설계했습니다. 결과 확인과 언어 접근성에서 차이를 만듭니다.</div>
+    <div class="grid" style="left:220px;right:220px;">
+      <div class="col">
+        <div class="pt-card">
+          <div class="pt-label">POINT 4.</div>
+          <div class="pt-title">응시 직후 즉시 결과 확인</div>
+          <ul>
+            <li>모의고사 종료와 동시에 채점 결과를 바로 확인</li>
+            <li>취약 영역을 빠르게 파악하고 다음 학습으로 연결</li>
+          </ul>
+        </div>
+        <div class="connector"></div>
+        <div class="blue-card">
+          <span class="spark">✦</span>
+          <h4>Instant<br>Feedback</h4>
+          <div class="bc-illust" style="bottom:70px;"><div class="ill-wave"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="bc-chips"><span class="chip deep">Your Score is updated</span><span class="chip ghost">즉시 채점</span></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="pt-card">
+          <div class="pt-label">POINT 5.</div>
+          <div class="pt-title">한국어·영어·태국어 지원</div>
+          <ul>
+            <li>3개 언어로 서비스 제공</li>
+            <li>언어 장벽 없이 응시 절차와 결과를 이해</li>
+          </ul>
+        </div>
+        <div class="connector"></div>
+        <div class="blue-card">
+          <span class="spark">✦</span>
+          <h4>Multilingual<br>Access</h4>
+          <div class="bc-illust" style="bottom:80px;right:48px;"><div class="ill-lang">A</div></div>
+          <div class="bc-chips"><span class="chip"># Korean</span><span class="chip"># English</span><span class="chip ghost"># Thai</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 UBION Co., Ltd. All Rights Reserved.</div>
+  <div class="page-num">07</div>
+</div>
+
+<!-- ============ SLIDE 8 : PRICE ============ -->
+<div class="slide" id="slide-8">
+  <div class="tophead"><b>UBION</b> | COURSEMOS IBT MOCK TEST</div>
+  <div class="head-wrap">
+    <span class="eyebrow">Price</span>
+    <div class="title-xl">부담 없이 반복하는 <span class="accent">실전 연습</span></div>
+  </div>
+  <hr class="dots">
+  <div class="price-left">
+    <div class="price-label">1회 응시료</div>
+    <div class="bignum">5,000<span>원</span></div>
+    <div class="price-state">실제 TOPIK IBT 응시료 대비<br>최대 95% 저렴합니다</div>
+  </div>
+  <div class="compare">
+    <div class="cbox">
+      <div class="lv">TOPIK Ⅰ IBT 기준</div>
+      <div class="price-line"><span class="old">70,000원</span><span class="arrow">→</span><span class="new">5,000원</span><span class="pct">93%↓</span></div>
+    </div>
+    <div class="cbox">
+      <div class="lv">TOPIK Ⅱ IBT 기준</div>
+      <div class="price-line"><span class="old">95,000원</span><span class="arrow">→</span><span class="new">5,000원</span><span class="pct">95%↓</span></div>
+    </div>
+  </div>
+  <div class="spark-deco">✦</div>
+  <div class="source">TOPIK 공식 IBT 응시료 기준 (2026년)</div>
+  <div class="footer-copy">© 2026 UBION Co., Ltd. All Rights Reserved.</div>
+  <div class="page-num">08</div>
+</div>
+
+<!-- ============ SLIDE 9 : 3-WIN ============ -->
+<div class="slide" id="slide-9">
+  <div class="tophead"><b>UBION</b> | COURSEMOS IBT MOCK TEST</div>
+  <div class="head-wrap">
+    <span class="eyebrow">Proposal</span>
+    <div class="title-xl">학생 · 기관 · COURSEMOS IBT가 <span class="accent">함께 만드는 상생 구조</span></div>
+  </div>
+  <div class="win-zone">
+    <div class="link lk1"></div>
+    <div class="link lk2"></div>
+    <div class="link lk3"></div>
+    <div class="hub"><span class="spark">✦</span><div class="n">3</div><div class="t">WIN MODEL</div></div>
+    <div class="wincard w1">
+      <h4>WIN 1.</h4>
+      <div class="who">유학생</div>
+      <p>부담 없는 가격으로 실전 연습<br><span class="arr">→</span> 자신감 있는 TOPIK IBT 응시</p>
+    </div>
+    <div class="wincard w2">
+      <h4>WIN 2.</h4>
+      <div class="who">대학 · 어학원</div>
+      <p>별도 인프라 없이 TOPIK 대비 프로그램 운영<br><span class="arr">→</span> 학생 만족도 향상</p>
+    </div>
+    <div class="wincard w3">
+      <h4>WIN 3.</h4>
+      <div class="who">COURSEMOS IBT</div>
+      <p>기관 파트너십 기반<br>안정적인 서비스 성장</p>
+    </div>
+    <div class="stat s-left"><div class="sn">33M+</div><div class="sk">UBION 교육 플랫폼 누적 사용자</div><div class="src">* 유비온 운영 실적 기준</div></div>
+    <div class="stat s-right"><div class="sn">150+</div><div class="sk">파트너 교육기관</div></div>
+  </div>
+  <div class="footer-copy">© 2026 UBION Co., Ltd. All Rights Reserved.</div>
+  <div class="page-num">09</div>
+</div>
+
+<!-- ============ SLIDE 10 : PROCESS ============ -->
+<div class="slide" id="slide-10">
+  <div class="tophead"><b>UBION</b> | COURSEMOS IBT MOCK TEST</div>
+  <div class="head-wrap">
+    <span class="eyebrow">Process</span>
+    <div class="title-xl">도입 <span class="accent">프로세스</span></div>
+  </div>
+  <div class="track"></div>
+  <div class="steps">
+    <div class="step"><div class="stepno">STEP 1</div><div class="dot">제휴<br>협의</div><p>도입 조건 및<br>세부 사항 협의</p></div>
+    <div class="step"><div class="stepno">STEP 2</div><div class="dot">서비스<br>준비</div><p>기관 전용 안내자료<br>및 운영 가이드 제작</p></div>
+    <div class="step"><div class="stepno">STEP 3</div><div class="dot">안내 및<br>신청접수</div><p>학생 대상 안내 배포<br>및 신청 접수</p></div>
+    <div class="step"><div class="stepno">STEP 4</div><div class="dot">응시<br>지원</div><p>모의고사 응시 진행<br>및 현장 지원</p></div>
+    <div class="step"><div class="stepno">STEP 5</div><div class="dot">결과<br>리포트</div><p>응시 결과 및<br>운영 리포트 공유</p></div>
+  </div>
+  <div class="footer-copy">© 2026 UBION Co., Ltd. All Rights Reserved.</div>
+  <div class="page-num">10</div>
+</div>
+
+<!-- ============ SLIDE 11 : CLOSING ============ -->
+<div class="slide" id="slide-11">
+  <div class="ribbon r1"></div>
+  <div class="ribbon r2"></div>
+  <div class="spine">GROWING UP, EVERYDAY</div>
+  <div class="center">
+    <img src="data:image/png;base64,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" alt="UBION">
+    <div class="wordmark">COURSEMOS IBT MOCK TEST</div>
+  </div>
+  <div class="closing-info">
+    <b>UBION Co., Ltd.</b><br>
+    COURSEMOS IBT — TOPIK · FOR UNIVERSITY &amp; LANGUAGE INSTITUTE<br>
+    © 2026 UBION Co., Ltd. All Rights Reserved.
+  </div>
+</div>
+
+</body>
+</html>
